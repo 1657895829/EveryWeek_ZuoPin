@@ -13,12 +13,12 @@
     <com.youth.banner.Banner
         android:layout_width="match_parent"
         android:layout_below="@+id/view"
-        android:layout_height="368dp"
+        android:layout_height="258dp"
         android:id="@+id/banner"></com.youth.banner.Banner>
 
     <TextView
         android:text="热门专题"
-        android:textSize="21sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
@@ -26,7 +26,6 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:padding="6dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 

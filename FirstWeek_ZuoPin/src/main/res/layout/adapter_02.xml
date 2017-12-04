@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.facebook.drawee.view.SimpleDraweeView
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         android:id="@+id/draweeView"
-        android:layout_width="188dp"
-        android:layout_height="188dp"
+        android:layout_height="218dp"
+        android:layout_width="match_parent"
         fresco:actualImageScaleType="centerCrop"
         fresco:placeholderImageScaleType="centerCrop"
         fresco:placeholderImage="@drawable/app_default"
@@ -22,6 +24,5 @@
         android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_vertical"/>
+        android:gravity="center_horizontal" />
 </LinearLayout>

@@ -2,7 +2,6 @@ package com.example.zuopin.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +17,9 @@ import butterknife.ButterKnife;
 /**
  * //RecyclerView展示数据适配器
  */
-public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter {
     private Context context;
-    private List<Bean.DataBean.DefaultGoodsListBean> list;
+    private List<Bean.DataBean.SubjectsBean> list;
 
     public MyAdapter(Context context) {
         this.context = context;
@@ -31,7 +30,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (this.list == null) {
             this.list = new ArrayList<>();
         }
-        this.list.addAll(bean.getData().getDefaultGoodsList());
+        this.list.addAll(bean.getData().getSubjects());
         notifyDataSetChanged();
     }
 
@@ -45,6 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             View view02 = LayoutInflater.from(context).inflate(R.layout.adapter_02, parent, false);
             return new MyViewHolder02(view02);
         }
+
     }
 
     @Override
@@ -52,21 +52,21 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         //判断加载布局的类型
         if (holder instanceof MyViewHolder01) {
             MyViewHolder01 holder01 = (MyViewHolder01) holder;
-            holder01.simpleDraweeView.setImageURI(list.get(position).getGoods_img());
+            holder01.simpleDraweeView.setImageURI(list.get(position).getDescImage());
         } else if (holder instanceof MyViewHolder02) {
             MyViewHolder02 holder02 = (MyViewHolder02) holder;
-            holder02.draweeView.setImageURI(list.get(position).getGoods_img());
-            holder02.title.setText(list.get(position).getGoods_name());
+            holder02.draweeView.setImageURI(list.get(position).getDescImage());
+            holder02.title.setText(list.get(position).getTitle());
         }
     }
 
     @Override
     public int getItemViewType(int position) {
         //判断布局类型，加载不同数据
-        if (!TextUtils.isEmpty(list.get(position).getGoods_img())){
-            return 1;
-        }else {
+        if (position % 2 == 0) {
             return 0;
+        } else {
+            return 1;
         }
     }
 
@@ -81,6 +81,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public MyViewHolder01(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
         }
     }
 
@@ -89,9 +90,10 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         SimpleDraweeView draweeView;
         @BindView(R.id.title)
         TextView title;
+
         public MyViewHolder02(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }
