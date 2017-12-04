@@ -3,6 +3,7 @@
     package="com.example.zuopin">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:name=".app.MyApplication"
         android:allowBackup="true"
