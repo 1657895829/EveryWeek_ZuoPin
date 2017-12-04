@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:src="@drawable/top_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.youth.banner.Banner
+        android:layout_width="match_parent"
+        android:layout_below="@+id/view"
+        android:layout_height="368dp"
+        android:id="@+id/banner"></com.youth.banner.Banner>
+
+    <TextView
+        android:text="热门专题"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
