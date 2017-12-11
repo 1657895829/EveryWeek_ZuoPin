@@ -175,9 +175,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.IViewHolder> {
         holder.plusViewId.setListener(new PlusView.ClickListener() {
             @Override
             public void click(int count) {
-                if(count == 1){
-                    Toast.makeText(context,"最小数量为1",Toast.LENGTH_SHORT).show();
-                }
                 list.get(position).setNum(count);
                 notifyDataSetChanged();
                 sum(list);

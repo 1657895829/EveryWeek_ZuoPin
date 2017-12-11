@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
 import app.com.second_shopcart.R;
 
 /**
@@ -50,6 +52,8 @@ public class PlusView extends LinearLayout {
                         if(listener != null){
                             listener.click(mCount);
                         }
+                    }else if(count == 1){
+                        Toast.makeText(context,"商品最小数量为1",Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (NumberFormatException e) {
