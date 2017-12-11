@@ -94,7 +94,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.IViewHolder> {
             holder.tvItemShopcartShopname.setVisibility(View.GONE);
         }
 
-//控制 商品的  checkbox
+        //控制 商品的  checkbox
         holder.itemCheckbox.setChecked(list.get(position).isItemSelected());
         if (list.size() > 0){
             if (list.get(position).getImages().contains("|")){
