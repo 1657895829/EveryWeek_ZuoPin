@@ -112,7 +112,7 @@ public class SelectCartAdapter extends RecyclerView.Adapter<SelectCartAdapter.My
         //ImageLoader.getInstance().displayImage(split[0], holder.item_face, ImageLoaderUtil.getDefaultOption());
 
         //2. 使用Fresco加载图片，进行数据的缓存
-        holder.item_face.setImageURI(split[0], Fresco_ImagePipelineConfigUtil.getDefaultImagePipelineConfig(context));     //使用Fresco加载图片
+        holder.item_face.setImageURI(split[0]);
 
         //控制商品的item_checkbox,,根据字段改变
         holder.item_checkbox.setChecked(list.get(position).isItem_check());

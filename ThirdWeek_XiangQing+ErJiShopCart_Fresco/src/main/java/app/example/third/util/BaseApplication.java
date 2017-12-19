@@ -13,7 +13,7 @@ public class BaseApplication extends Application {
         ImageLoaderUtil.init(this);
 
         //用于全局配置初始化Fresco 图片加载
-        Fresco.initialize(this);
+        Fresco.initialize(this,Fresco_ImagePipelineConfigUtil.getDefaultImagePipelineConfig(this));
     }
 
 }
